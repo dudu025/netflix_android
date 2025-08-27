@@ -18,11 +18,17 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Download
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -33,23 +39,20 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Tela()
-                }
+            Surface(
+                modifier = Modifier.fillMaxSize(),
+                color = MaterialTheme.colorScheme.background
+            ) {
+                Tela()
             }
         }
     }
-
+}
 
 @Preview
 @Composable
@@ -93,24 +96,24 @@ fun Tela() {
 
                 Spacer(modifier = Modifier.weight(1f))
 
-                Text(
-                    text = "Download",
-                    color = colorResource(id = R.color.white),
-                    fontSize = 15.sp,
-                    fontWeight = FontWeight.Bold,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier.padding(top = 10.dp)
+                Icon(
+                    imageVector = Icons.Default.Download,
+                    contentDescription = "Download",
+                    tint = colorResource(id = R.color.white),
+                    modifier = Modifier
+                        .padding(top = 10.dp)
+                        .size(24.dp)
                 )
 
                 Spacer(modifier = Modifier.width(5.dp))
 
-                Text(
-                    text = "Pesquisar",
-                    color = colorResource(id = R.color.white),
-                    fontSize = 15.sp,
-                    fontWeight = FontWeight.Bold,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier.padding(top = 10.dp)
+                Icon(
+                    imageVector = Icons.Default.Search,
+                    contentDescription = "Pesquisar",
+                    tint = colorResource(id = R.color.white),
+                    modifier = Modifier
+                        .padding(top = 10.dp)
+                        .size(24.dp)
                 )
             }
 
@@ -239,40 +242,34 @@ fun Tela() {
                             .padding(16.dp),
                         horizontalArrangement = Arrangement.SpaceEvenly
                     ) {
-                        Card(
+                        Button(
+                            onClick = { },
                             modifier = Modifier
                                 .weight(1f)
                                 .height(40.dp),
-                            colors = CardDefaults.cardColors(containerColor = Color.Red)
+                            colors = ButtonDefaults.buttonColors(containerColor = Color.Red)
                         ) {
-                            Box(
-                                contentAlignment = Alignment.Center
-                            ) {
-                                Text(
-                                    text = "Assistir",
-                                    color = Color.White,
-                                    fontWeight = FontWeight.Bold
-                                )
-                            }
+                            Text(
+                                text = "Assistir",
+                                color = Color.White,
+                                fontWeight = FontWeight.Bold
+                            )
                         }
 
                         Spacer(modifier = Modifier.width(16.dp))
 
-                        Card(
+                        Button(
+                            onClick = { },
                             modifier = Modifier
                                 .weight(1f)
                                 .height(40.dp),
-                            colors = CardDefaults.cardColors(containerColor = Color.Gray)
+                            colors = ButtonDefaults.buttonColors(containerColor = Color.Gray)
                         ) {
-                            Box(
-                                contentAlignment = Alignment.Center
-                            ) {
-                                Text(
-                                    text = "Minha Lista",
-                                    color = Color.White,
-                                    fontWeight = FontWeight.Bold
-                                )
-                            }
+                            Text(
+                                text = "Minha Lista",
+                                color = Color.White,
+                                fontWeight = FontWeight.Bold
+                            )
                         }
                     }
                 }
@@ -315,8 +312,3 @@ fun Tela() {
         }
     }
 }
-
-
-
-
-
