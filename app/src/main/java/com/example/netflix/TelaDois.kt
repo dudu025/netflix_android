@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -28,6 +29,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -67,26 +69,34 @@ fun TelaPreparada(modifier: Modifier = Modifier) {
             modifier = Modifier
                 .height(610.dp)
                 .width(350.dp)
-                .padding(top = 30.dp)
-                .background(Color.Gray),
+                .padding(top = 30.dp),
             contentAlignment = Alignment.BottomCenter
         ) {
+
+            Image(
+                painter = painterResource(id = R.drawable.pica_pau),
+                contentDescription = "Filme Pica Pau",
+                modifier = Modifier.fillMaxSize()
+            )
+
+
             Box(
                 modifier = Modifier
-                    .width(200.dp)
-                    .height(70.dp)
+                    .width(150.dp)
+                    .height(50.dp)
                     .padding(bottom = 10.dp)
                     .background(Color.DarkGray),
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = "filme",
+                    text = "Pica Pau",
                     color = Color.White,
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold
                 )
             }
         }
+
 
         Spacer(modifier = Modifier.height(20.dp))
 

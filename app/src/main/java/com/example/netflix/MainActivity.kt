@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -32,7 +33,9 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -224,89 +227,102 @@ fun Tela() {
                 elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
                 colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
             ) {
-                Column(
-                    modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.SpaceBetween
-                ) {
-                    Text(
-                        text = "Título do Filme",
-                        color = Color.White,
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Bold,
-                        modifier = Modifier.padding(16.dp)
+                Box(modifier = Modifier.fillMaxSize()) {
+
+                    Image(
+                        painter = painterResource(id = R.drawable.os_simpsons),
+                        contentDescription = "Capa do filme Os Simpsons",
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
                     )
 
-                    Row(
+
+                    Column(
                         modifier = Modifier
+                            .align(Alignment.BottomStart)
                             .fillMaxWidth()
+                            .background(Color.Transparent)
                             .padding(16.dp),
-                        horizontalArrangement = Arrangement.SpaceEvenly
+                        horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-                        Button(
-                            onClick = { },
-                            modifier = Modifier
-                                .weight(1f)
-                                .height(40.dp),
-                            colors = ButtonDefaults.buttonColors(containerColor = Color.Red)
-                        ) {
-                            Text(
-                                text = "Assistir",
-                                color = Color.White,
-                                fontWeight = FontWeight.Bold
-                            )
-                        }
+                        Text(
+                            text = "Os Simpsons",
+                            color = Color.Black,
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier.padding(bottom = 8.dp)
+                        )
 
-                        Spacer(modifier = Modifier.width(16.dp))
-
-                        Button(
-                            onClick = { },
-                            modifier = Modifier
-                                .weight(1f)
-                                .height(40.dp),
-                            colors = ButtonDefaults.buttonColors(containerColor = Color.Gray)
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceEvenly
                         ) {
-                            Text(
-                                text = "Minha Lista",
-                                color = Color.White,
-                                fontWeight = FontWeight.Bold
-                            )
+                            Button(
+                                onClick = { },
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .height(40.dp),
+                                colors = ButtonDefaults.buttonColors(containerColor = Color.Red)
+                            ) {
+                                Text(
+                                    text = "Assistir",
+                                    color = Color.White,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
+
+                            Spacer(modifier = Modifier.width(16.dp))
+
+                            Button(
+                                onClick = { },
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .height(40.dp),
+                                colors = ButtonDefaults.buttonColors(containerColor = Color.Gray)
+                            ) {
+                                Text(
+                                    text = "Minha Lista",
+                                    color = Color.White,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
                         }
                     }
                 }
             }
-        }
 
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .align(Alignment.BottomCenter)
-                .padding(16.dp),
-            horizontalArrangement = Arrangement.SpaceEvenly
-        ) {
-            Card(
-                modifier = Modifier.size(60.dp),
-                colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
+                horizontalArrangement = Arrangement.SpaceEvenly
             ) {
-                Box(contentAlignment = Alignment.Center) {
-                    Text("Início", color = Color.White, fontWeight = FontWeight.Bold)
+                Card(
+                    modifier = Modifier.size(60.dp),
+                    colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
+                ) {
+                    Box(contentAlignment = Alignment.Center) {
+                        Text("Início", color = Color.White, fontWeight = FontWeight.Bold)
+                    }
                 }
-            }
 
-            Card(
-                modifier = Modifier.size(60.dp),
-                colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
-            ) {
-                Box(contentAlignment = Alignment.Center) {
-                    Text("Novidades", color = Color.White, fontWeight = FontWeight.Bold)
+                Card(
+                    modifier = Modifier.size(60.dp),
+                    colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
+                ) {
+                    Box(contentAlignment = Alignment.Center) {
+                        Text("Novidades", color = Color.White, fontWeight = FontWeight.Bold)
+                    }
                 }
-            }
 
-            Card(
-                modifier = Modifier.size(60.dp),
-                colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
-            ) {
-                Box(contentAlignment = Alignment.Center) {
-                    Text("Minha Netflix", color = Color.White, fontWeight = FontWeight.Bold)
+                Card(
+                    modifier = Modifier.size(60.dp),
+                    colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
+                ) {
+                    Box(contentAlignment = Alignment.Center) {
+                        Text("Minha Netflix", color = Color.White, fontWeight = FontWeight.Bold)
+                    }
                 }
             }
         }
