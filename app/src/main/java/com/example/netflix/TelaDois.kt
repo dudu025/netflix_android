@@ -85,7 +85,7 @@ fun TelaPreparada(modifier: Modifier = Modifier) {
                     .width(150.dp)
                     .height(50.dp)
                     .padding(bottom = 10.dp)
-                    .background(Color.DarkGray),
+                    .background(Color.Transparent),
                 contentAlignment = Alignment.Center
             ) {
                 Text(
@@ -100,6 +100,14 @@ fun TelaPreparada(modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(20.dp))
 
+
+        Text(
+            text = "Escolha o seu perfil",
+            color = Color.White,
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(bottom = 16.dp)
+        )
 
         Box(
             modifier = Modifier
@@ -124,7 +132,7 @@ fun TelaPreparada(modifier: Modifier = Modifier) {
                         modifier = Modifier
                             .size(70.dp)
                             .background(Color.Black, shape = RoundedCornerShape(12.dp))
-                            .clickable {  },
+                            .clickable { },
                         contentAlignment = Alignment.Center
                     ) {
                         Icon(
@@ -139,7 +147,7 @@ fun TelaPreparada(modifier: Modifier = Modifier) {
                         modifier = Modifier
                             .size(70.dp)
                             .background(Color.Black, shape = RoundedCornerShape(12.dp))
-                            .clickable {  },
+                            .clickable { },
                         contentAlignment = Alignment.Center
                     ) {
                         Icon(
@@ -154,7 +162,7 @@ fun TelaPreparada(modifier: Modifier = Modifier) {
                         modifier = Modifier
                             .size(70.dp)
                             .background(Color.Black, shape = RoundedCornerShape(12.dp))
-                            .clickable {  },
+                            .clickable { },
                         contentAlignment = Alignment.Center
                     ) {
                         Icon(
@@ -166,7 +174,6 @@ fun TelaPreparada(modifier: Modifier = Modifier) {
                     }
                 }
 
-
                 Row(
                     horizontalArrangement = Arrangement.SpaceEvenly,
                     modifier = Modifier.fillMaxWidth()
@@ -175,7 +182,7 @@ fun TelaPreparada(modifier: Modifier = Modifier) {
                         modifier = Modifier
                             .size(70.dp)
                             .background(Color.Black, shape = RoundedCornerShape(12.dp))
-                            .clickable {  },
+                            .clickable { },
                         contentAlignment = Alignment.Center
                     ) {
                         Icon(
@@ -190,7 +197,7 @@ fun TelaPreparada(modifier: Modifier = Modifier) {
                         modifier = Modifier
                             .size(70.dp)
                             .background(Color.Black, shape = RoundedCornerShape(12.dp))
-                            .clickable {  },
+                            .clickable { },
                         contentAlignment = Alignment.Center
                     ) {
                         Icon(
@@ -218,6 +225,6 @@ fun TelaPreparada(modifier: Modifier = Modifier) {
                 }
             }
         }
+
     }
 }
-
